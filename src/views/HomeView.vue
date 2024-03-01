@@ -2,6 +2,7 @@
 import { useThemeStore } from '@/stores/theme'
 import IconWelcome from '@/components/icons/IconWelcome.vue'
 import { storeToRefs } from 'pinia'
+import GButtonVue from '@/components/common/GButton.vue';
 
 const themeStore = useThemeStore()
 const { theme } = storeToRefs(themeStore)
@@ -9,13 +10,13 @@ const { theme } = storeToRefs(themeStore)
 
 <template>
   <div class="container">
-    <icon-welcome />
+    <IconWelcome />
     <h1>Welcome to Pokédex</h1>
     <p>
       The digital encyclopedia created by Professor Oak is an invaluable tool to Trainers in the
       Pokémon world.
     </p>
-    <button>Get started</button>
+    <GButtonVue text="Get started" type="primary" padding="12px 16px" />
   </div>
 </template>
 
@@ -41,7 +42,6 @@ const { theme } = storeToRefs(themeStore)
     margin: 28px 0;
     color: v-bind('theme.text.p');
     max-width: 500px;
-
   }
 }
 </style>

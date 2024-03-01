@@ -9,6 +9,7 @@ export default {
   button: {
     primary: {
       background: '#F22539',
+      hover: '#C00E20',
       text: '#FFFFFF'
     },
 
