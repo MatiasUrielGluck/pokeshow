@@ -16,7 +16,7 @@ const { theme } = storeToRefs(themeStore)
       The digital encyclopedia created by Professor Oak is an invaluable tool to Trainers in the
       Pokémon world.
     </p>
-    <GButtonVue text="Get started" type="primary" padding="12px 16px" />
+    <GButtonVue text="Get started" type="primary" padding="12px 16px" @click="$router.push('/all')" />
   </div>
 </template>
 
