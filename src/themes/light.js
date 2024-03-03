@@ -1,4 +1,15 @@
 export default {
+  padding: {
+    body: {
+      desktop: '300px',
+      mobile: '25px'
+    },
+    bottomBar: {
+      desktop: '0 300px',
+      mobile: '25px'
+    }
+  },
+
   background: '#F9F9F9',
 
   text: {
@@ -15,6 +26,7 @@ export default {
 
     secondary: {
       background: '#BFBFBF',
+      hover: '#a8a8a8',
       text: '#FFFFFF'
     }
   }

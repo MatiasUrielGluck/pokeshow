@@ -82,8 +82,12 @@ button {
   }
 
   &.secondary {
-    background: v-bind('theme.button.primary.background');
-    color: v-bind('theme.button.primary.text');
+    background: v-bind('theme.button.secondary.background');
+    color: v-bind('theme.button.secondary.text');
+
+    &:hover {
+      background: v-bind('theme.button.secondary.hover');
+    }
   }
 
   @media (width < 768px) {
