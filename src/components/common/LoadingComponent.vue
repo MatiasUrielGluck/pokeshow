@@ -10,13 +10,13 @@ defineProps({
 </script>
 
 <template>
-  <div :class="`container ${fullscreen ? 'fullscreen' : ''}`">
+  <div :class="`loading-container ${fullscreen ? 'fullscreen' : ''}`">
     <IconLoading />
   </div>
 </template>
 
 <style lang="scss" scoped>
-.container {
+.loading-container {
   &.fullscreen {
     height: 100vh;
     width: 100vw;

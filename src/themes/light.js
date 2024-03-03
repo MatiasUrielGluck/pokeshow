@@ -1,11 +1,11 @@
 export default {
   padding: {
     body: {
-      desktop: '300px',
+      desktop: '25px 20%',
       mobile: '25px'
     },
     bottomBar: {
-      desktop: '0 300px',
+      desktop: '0 20%',
       mobile: '25px'
     }
   },
@@ -29,5 +29,10 @@ export default {
       hover: '#a8a8a8',
       text: '#FFFFFF'
     }
+  },
+
+  input: {
+    text: "#353535",
+    placeholder: "#BFBFBF"
   }
 }

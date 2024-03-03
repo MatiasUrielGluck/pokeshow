@@ -9,7 +9,7 @@ const { theme } = storeToRefs(themeStore)
 </script>
 
 <template>
-  <div class="container">
+  <div class="home-container">
     <IconWelcome />
     <h1>Welcome to Pokédex</h1>
     <p>
@@ -21,7 +21,7 @@ const { theme } = storeToRefs(themeStore)
 </template>
 
 <style lang="scss" scoped>
-.container {
+.home-container {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;

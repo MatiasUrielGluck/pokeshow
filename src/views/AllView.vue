@@ -29,7 +29,7 @@ onMounted(async () => {
   <div class="loading-container" v-if="!pokemons.length">
     <LoadingComponent fullscreen/>
   </div>
-  <div class="container" v-else>
+  <div class="template-container" v-else>
     <PokeTemplate />
   </div>
 </template>
