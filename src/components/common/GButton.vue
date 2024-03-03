@@ -35,6 +35,10 @@ const props = defineProps({
   mobileWidth: {
     type: String,
     default: 'fit-content'
+  },
+  minWidth: {
+    type: String,
+    default: 'fit-content'
   }
 })
 
@@ -65,6 +69,7 @@ button {
   gap: 8px;
 
   padding: v-bind(padding);
+  min-width: v-bind(minWidth);
   width: v-bind(width);
   border: none;
   border-radius: 24px;
@@ -90,7 +95,7 @@ button {
     }
   }
 
-  @media (width < 768px) {
+  @media (width < 1000px) {
     padding: v-bind(mobilePadding);
     width: v-bind(mobileWidth);
   }

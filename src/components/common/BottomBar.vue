@@ -15,7 +15,8 @@ const { theme } = storeToRefs(themeStore)
       type="primary"
       padding="12px 16px"
       width="275px"
-      mobileWidth="150px"
+      mobileWidth="40%"
+      minWidth="150px"
       @click="$router.push('/all')"
     />
     <GButtonVue
@@ -24,7 +25,8 @@ const { theme } = storeToRefs(themeStore)
       type="secondary"
       padding="12px 16px"
       width="275px"
-      mobileWidth="150px"
+      mobileWidth="40%"
+      minWidth="150px"
       @click="$router.push('/favorites')"
     />
   </div>
@@ -46,7 +48,7 @@ const { theme } = storeToRefs(themeStore)
 
   padding: v-bind('theme.padding.bottomBar.desktop');
 
-  @media (width < 768px) {
+  @media (width < 1000px) {
     padding: v-bind('theme.padding.bottomBar.mobile');
   }
 }
