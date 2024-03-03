@@ -1,6 +1,5 @@
 <script setup>
 import { useThemeStore } from '@/stores/theme'
-import IconWelcome from '@/components/icons/IconWelcome.vue'
 import { storeToRefs } from 'pinia'
 import GButtonVue from '@/components/common/GButton.vue'
 
