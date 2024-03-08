@@ -14,7 +14,9 @@ const scrollView = ref(null)
 
 const loadMoreItems = (clear = false) => {
   if (clear) listToRender.value = []
-  listToRender.value.push(...props.items.slice(listToRender.value.length, listToRender.value.length + 30))
+  listToRender.value.push(
+    ...props.items.slice(listToRender.value.length, listToRender.value.length + 30)
+  )
 }
 
 const handleScroll = () => {
@@ -22,9 +24,12 @@ const handleScroll = () => {
   if (element.getBoundingClientRect().bottom < window.innerHeight + 200) loadMoreItems()
 }
 
-watch(() => props.items, () => {
-  loadMoreItems(true)
-})
+watch(
+  () => props.items,
+  () => {
+    loadMoreItems(true)
+  }
+)
 
 onMounted(() => {
   // window.addEventListener()

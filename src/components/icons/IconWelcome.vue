@@ -6,14 +6,7 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <circle
-      cx="152"
-      cy="172"
-      r="104"
-      fill="#F22539"
-      stroke="black"
-      stroke-width="2"
-    />
+    <circle cx="152" cy="172" r="104" fill="#F22539" stroke="black" stroke-width="2" />
     <mask
       id="mask0_0_1"
       style="mask-type: alpha"

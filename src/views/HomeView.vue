@@ -2,7 +2,7 @@
 import { useThemeStore } from '@/stores/theme'
 import IconWelcome from '@/components/icons/IconWelcome.vue'
 import { storeToRefs } from 'pinia'
-import GButtonVue from '@/components/common/GButton.vue';
+import GButtonVue from '@/components/common/GButton.vue'
 
 const themeStore = useThemeStore()
 const { theme } = storeToRefs(themeStore)
@@ -16,7 +16,12 @@ const { theme } = storeToRefs(themeStore)
       The digital encyclopedia created by Professor Oak is an invaluable tool to Trainers in the
       Pokémon world.
     </p>
-    <GButtonVue text="Get started" type="primary" padding="12px 16px" @click="$router.push('/all')" />
+    <GButtonVue
+      text="Get started"
+      type="primary"
+      padding="12px 16px"
+      @click="$router.push('/all')"
+    />
   </div>
 </template>
 

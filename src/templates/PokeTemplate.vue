@@ -27,7 +27,9 @@ const scrollView = ref(null)
 // Computed
 const filteredPokemons = computed(() => {
   let pokeListToUse = props.showFavorites ? favPokemons : pokemons
-  return pokeListToUse.value.filter((pokemon) => pokemon.name.toLowerCase().includes(searchQuery.value))
+  return pokeListToUse.value.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(searchQuery.value)
+  )
 })
 </script>
 

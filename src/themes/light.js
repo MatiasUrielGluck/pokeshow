@@ -32,22 +32,22 @@ export default {
   },
 
   input: {
-    text: "#353535",
-    placeholder: "#BFBFBF"
+    text: '#353535',
+    placeholder: '#BFBFBF'
   },
 
   bottomBar: {
-    background: "#FFFFFF"
+    background: '#FFFFFF'
   },
 
   searchBar: {
-    background: "#FFFFFF"
+    background: '#FFFFFF'
   },
 
   item: {
-    background: "#ffffff",
+    background: '#ffffff',
     icon: {
-      background: "#F5F5F5",
+      background: '#F5F5F5'
     }
   }
 }

@@ -2,7 +2,7 @@
 import { useThemeStore } from '@/stores/theme'
 import { storeToRefs } from 'pinia'
 import { capitalize } from 'vue'
-import { usePokemonsStore } from '@/stores/pokemons';
+import { usePokemonsStore } from '@/stores/pokemons'
 import IconFavorite from '@/components/icons/IconFavorite.vue'
 
 // Store config
@@ -26,8 +26,8 @@ defineProps({
     </div>
     <div class="icon" @click="togglePokemonFavoriteStatus(item)">
       <IconFavorite :is-enabled="isFavoritePokemon(item.name)" />
-<!--      <IconFavoriteEnabled v-if="isFavoritePokemon(item.name)"/>-->
-<!--      <IconFavoriteDisabled v-else />-->
+      <!--      <IconFavoriteEnabled v-if="isFavoritePokemon(item.name)"/>-->
+      <!--      <IconFavoriteDisabled v-else />-->
     </div>
   </div>
 </template>
@@ -58,7 +58,7 @@ defineProps({
     height: 40px;
     display: grid;
     place-items: center;
-    background: v-bind('theme.item.icon.background')
+    background: v-bind('theme.item.icon.background');
   }
 }
 </style>

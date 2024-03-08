@@ -20,12 +20,12 @@ const router = createRouter({
       path: '/favorites',
       name: 'favorites',
       component: FavView
-    },
+    }
   ],
   scrollBehavior(to, from, savedPosition) {
     // always scroll to top
     return { top: 0 }
-  },
+  }
 })
 
 export default router

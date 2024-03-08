@@ -7,7 +7,6 @@ import { getPokemons } from '@/services/pokemonsService'
 import LoadingComponent from '@/components/common/LoadingComponent.vue'
 import PokeTemplate from '@/templates/PokeTemplate.vue'
 
-
 const pokemonsStore = usePokemonsStore()
 const { pokemons } = storeToRefs(pokemonsStore)
 const { setPokemons } = pokemonsStore
@@ -27,7 +26,7 @@ onMounted(async () => {
 
 <template>
   <div class="loading-container" v-if="!pokemons.length">
-    <LoadingComponent fullscreen/>
+    <LoadingComponent fullscreen />
   </div>
   <div class="template-container" v-else>
     <PokeTemplate />
