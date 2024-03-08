@@ -11,7 +11,14 @@ import PokeList from '@/components/PokeList/PokeList.vue'
 const themeStore = useThemeStore()
 const pokemonsStore = usePokemonsStore()
 const { theme } = storeToRefs(themeStore)
-const { pokemons } = storeToRefs(pokemonsStore)
+const { pokemons, favPokemons } = storeToRefs(pokemonsStore)
+
+const props = defineProps({
+  showFavorites: {
+    type: Boolean,
+    default: false
+  }
+})
 
 // Refs
 const searchQuery = ref('')
@@ -19,7 +26,8 @@ const scrollView = ref(null)
 
 // Computed
 const filteredPokemons = computed(() => {
-  return pokemons.value.filter((pokemon) => pokemon.name.toLowerCase().includes(searchQuery.value))
+  let pokeListToUse = props.showFavorites ? favPokemons : pokemons
+  return pokeListToUse.value.filter((pokemon) => pokemon.name.toLowerCase().includes(searchQuery.value))
 })
 </script>
 

@@ -21,5 +21,5 @@ export const usePokemonsStore = defineStore('pokemons', () => {
     }
   }
 
-  return { pokemons, setPokemons, isFavoritePokemon, togglePokemonFavoriteStatus }
+  return { pokemons, favPokemons, setPokemons, isFavoritePokemon, togglePokemonFavoriteStatus }
 })
