@@ -15,6 +15,7 @@ const { pokemons } = storeToRefs(pokemonsStore)
 
 // Refs
 const searchQuery = ref('')
+const scrollView = ref(null)
 
 // Computed
 const filteredPokemons = computed(() => {
@@ -33,7 +34,7 @@ const filteredPokemons = computed(() => {
         v-model="searchQuery"
       />
     </div>
-    <div class="list-container">
+    <div class="list-container" ref="scrollView">
       <PokeList :items="filteredPokemons" />
     </div>
     <BottomBar />
@@ -57,7 +58,7 @@ const filteredPokemons = computed(() => {
     position: fixed;
     top: 0;
     left: 0;
-    
+
     width: 100%;
     height: 100px;
     background: v-bind('theme.background');
