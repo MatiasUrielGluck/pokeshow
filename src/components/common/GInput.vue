@@ -70,16 +70,17 @@ defineProps({
     width: v-bind(width);
     border: none;
     border-radius: 5px;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    box-shadow: 0 2px 10px #0000000a;
 
     font-size: 16px;
     font-weight: 500;
     color: v-bind('theme.input.text');
-
     padding: v-bind('padding');
+    transition: all 0.3s ease;
 
     &:focus {
       outline: none;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
     }
 
     &::placeholder {
