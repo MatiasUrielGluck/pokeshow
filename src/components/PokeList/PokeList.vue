@@ -1,11 +1,10 @@
 <script setup>
 import { useThemeStore } from '@/stores/theme'
 import { storeToRefs } from 'pinia'
-import PokeItem from './PokeItem.vue';
+import PokeItem from './PokeItem.vue'
 
 // Store config
 const themeStore = useThemeStore()
-const { theme } = storeToRefs(themeStore)
 
 defineProps({
   items: {

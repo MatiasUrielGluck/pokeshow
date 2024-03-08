@@ -10,7 +10,6 @@ import { usePokemonsStore } from '@/stores/pokemons';
 const themeStore = useThemeStore()
 const pokemonsStore = usePokemonsStore()
 const { theme } = storeToRefs(themeStore)
-const { favPokemons } = storeToRefs(pokemonsStore)
 const { isFavoritePokemon, togglePokemonFavoriteStatus } = pokemonsStore
 
 defineProps({

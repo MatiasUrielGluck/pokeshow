@@ -9,7 +9,7 @@ const { theme } = storeToRefs(themeStore)
 
 const model = defineModel()
 
-const props = defineProps({
+defineProps({
   placeholder: {
     type: String,
     default: ''
