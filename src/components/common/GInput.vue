@@ -7,6 +7,8 @@ import { GInputEnum } from '@/enums/GInputEnum'
 const themeStore = useThemeStore()
 const { theme } = storeToRefs(themeStore)
 
+const model = defineModel()
+
 const props = defineProps({
   placeholder: {
     type: String,
@@ -44,7 +46,7 @@ const props = defineProps({
     <div class="icon">
       <component :is="getIconByName(icon)" />
     </div>
-    <input :type="type" :placeholder="placeholder" />
+    <input :type="type" :placeholder="placeholder" v-model="model" />
   </div>
 </template>
 
@@ -53,7 +55,7 @@ const props = defineProps({
   position: relative;
   width: v-bind(width);
 
-  .icon { 
+  .icon {
     position: absolute;
     top: 0;
     left: 0;

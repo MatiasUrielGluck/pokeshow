@@ -34,5 +34,17 @@ export default {
   input: {
     text: "#353535",
     placeholder: "#BFBFBF"
+  },
+
+  bottomBar: {
+    background: "#FFFFFF"
+  },
+
+  searchBar: {
+    background: "#FFFFFF"
+  },
+
+  item: {
+    background: "#ffffff"
   }
 }

@@ -39,11 +39,14 @@ const { theme } = storeToRefs(themeStore)
   left: 0;
   height: 80px;
   width: 100%;
+  z-index: 10;
 
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+
+  background: v-bind('theme.bottomBar.background');
   box-shadow: 0 -5px 4px #0000000d;
 
   padding: v-bind('theme.padding.bottomBar.desktop');
