@@ -45,6 +45,9 @@ export default {
   },
 
   item: {
-    background: "#ffffff"
+    background: "#ffffff",
+    icon: {
+      background: "#F5F5F5",
+    }
   }
 }

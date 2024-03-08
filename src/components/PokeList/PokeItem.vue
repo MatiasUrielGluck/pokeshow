@@ -1,10 +1,9 @@
 <script setup>
 import { useThemeStore } from '@/stores/theme'
 import { storeToRefs } from 'pinia'
-import IconFavoriteEnabled from '../icons/IconFavoriteEnabled.vue';
-import IconFavoriteDisabled from '../icons/IconFavoriteDisabled.vue';
 import { capitalize } from 'vue'
 import { usePokemonsStore } from '@/stores/pokemons';
+import IconFavorite from '@/components/icons/IconFavorite.vue'
 
 // Store config
 const themeStore = useThemeStore()
@@ -26,8 +25,9 @@ defineProps({
       {{ capitalize(item.name) }}
     </div>
     <div class="icon" @click="togglePokemonFavoriteStatus(item)">
-      <IconFavoriteEnabled v-if="isFavoritePokemon(item.name)"/>
-      <IconFavoriteDisabled v-else />
+      <IconFavorite :is-enabled="isFavoritePokemon(item.name)" />
+<!--      <IconFavoriteEnabled v-if="isFavoritePokemon(item.name)"/>-->
+<!--      <IconFavoriteDisabled v-else />-->
     </div>
   </div>
 </template>
@@ -50,6 +50,15 @@ defineProps({
 
   &:hover {
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+
+  .icon {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    background: v-bind('theme.item.icon.background')
   }
 }
 </style>
