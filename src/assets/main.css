@@ -7,3 +7,7 @@
   font-family: 'Poppins', sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
+
+body {
+  overflow-y: scroll; /* Show vertical scrollbar */
+}
