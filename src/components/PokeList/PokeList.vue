@@ -43,15 +43,34 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="pokelist-container" ref="scrollView">
-    <PokeItem v-for="(item, index) in listToRender" :key="index" :item="item" />
+  <div ref="scrollView">
+    <TransitionGroup name="list" tag="div" class="pokelist-container">
+      <PokeItem v-for="item in listToRender" :key="item" :item="item" />
+    </TransitionGroup>
   </div>
 </template>
 
 <style lang="scss" scoped>
 .pokelist-container {
+  position: relative;
   display: flex;
   flex-flow: column nowrap;
   gap: 12px;
+}
+
+.list-move,
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+}
+
+.list-leave-active {
+  position: absolute;
+  width: 100%;
 }
 </style>

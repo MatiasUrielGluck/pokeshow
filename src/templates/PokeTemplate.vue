@@ -47,7 +47,7 @@ const filteredPokemons = computed(() => {
     <div class="list-container" ref="scrollView">
       <PokeList :items="filteredPokemons" />
     </div>
-    <BottomBar />
+    <BottomBar :is-favorite="showFavorites" />
   </div>
 </template>
 

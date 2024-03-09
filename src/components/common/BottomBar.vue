@@ -5,6 +5,13 @@ import GButtonVue from '@/components/common/GButton.vue'
 
 const themeStore = useThemeStore()
 const { theme } = storeToRefs(themeStore)
+
+defineProps({
+  isFavorite: {
+    type: Boolean,
+    default: false
+  }
+})
 </script>
 
 <template>
@@ -12,7 +19,7 @@ const { theme } = storeToRefs(themeStore)
     <GButtonVue
       text="All"
       icon="list-all"
-      type="primary"
+      :type="isFavorite ? 'secondary' : 'primary'"
       padding="12px 16px"
       width="275px"
       mobileWidth="40%"
@@ -22,7 +29,7 @@ const { theme } = storeToRefs(themeStore)
     <GButtonVue
       text="Favorites"
       icon="fav-plain"
-      type="secondary"
+      :type="isFavorite ? 'primary' : 'secondary'"
       padding="12px 16px"
       width="275px"
       mobileWidth="40%"
