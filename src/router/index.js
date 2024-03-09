@@ -22,7 +22,7 @@ const router = createRouter({
       component: FavView
     }
   ],
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
     // always scroll to top
     return { top: 0 }
   }
