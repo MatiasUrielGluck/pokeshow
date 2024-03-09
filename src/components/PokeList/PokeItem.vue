@@ -26,8 +26,6 @@ defineProps({
     </div>
     <div class="icon" @click="togglePokemonFavoriteStatus(item)">
       <IconFavorite :is-enabled="isFavoritePokemon(item.name)" />
-      <!--      <IconFavoriteEnabled v-if="isFavoritePokemon(item.name)"/>-->
-      <!--      <IconFavoriteDisabled v-else />-->
     </div>
   </div>
 </template>
