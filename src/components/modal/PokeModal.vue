@@ -68,7 +68,7 @@ onUpdated(async () => {
           <img src="@/assets/images/landscape.png" alt="pokemon landscape" />
         </div>
         <div class="poke-image">
-          <img :src="pokeImage" alt="pokemon image">
+          <img :src="pokeImage" alt="pokemon image" />
         </div>
       </div>
 

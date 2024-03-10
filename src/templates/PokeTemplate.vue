@@ -6,7 +6,6 @@ import BottomBar from '@/components/common/BottomBar.vue'
 import GInput from '@/components/common/GInput.vue'
 import { computed, ref } from 'vue'
 import PokeList from '@/components/PokeList/PokeList.vue'
-import IconCheck from '@/components/icons/IconCheck.vue'
 
 // Store config
 const themeStore = useThemeStore()

@@ -3,7 +3,9 @@ import { defineStore } from 'pinia'
 
 export const usePokemonsStore = defineStore('pokemons', () => {
   const pokemons = ref([])
-  const favPokemons = ref(localStorage.getItem('favpokemons') ? JSON.parse(localStorage.getItem('favpokemons')) : [])
+  const favPokemons = ref(
+    localStorage.getItem('favpokemons') ? JSON.parse(localStorage.getItem('favpokemons')) : []
+  )
 
   const setPokemons = (data) => {
     pokemons.value = data
