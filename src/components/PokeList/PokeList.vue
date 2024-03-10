@@ -1,6 +1,7 @@
 <script setup>
 import PokeItem from './PokeItem.vue'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
+import PokeModal from '@/components/modal/PokeModal.vue'
 
 const props = defineProps({
   items: {
@@ -11,6 +12,8 @@ const props = defineProps({
 
 const listToRender = ref([])
 const scrollView = ref(null)
+const showModal = ref(false)
+const selectedPokemonName = ref('')
 
 const loadMoreItems = (clear = false) => {
   if (clear) listToRender.value = []
@@ -22,6 +25,11 @@ const loadMoreItems = (clear = false) => {
 const handleScroll = () => {
   let element = scrollView.value
   if (element.getBoundingClientRect().bottom < window.innerHeight + 200) loadMoreItems()
+}
+
+const selectPokemon = (pokemon) => {
+  selectedPokemonName.value = pokemon.name
+  showModal.value = true
 }
 
 watch(
@@ -43,9 +51,10 @@ onUnmounted(() => {
 </script>
 
 <template>
+  <poke-modal :open="showModal" :pokename="selectedPokemonName" @close="showModal = false" />
   <div ref="scrollView">
     <TransitionGroup name="list" tag="div" class="pokelist-container">
-      <PokeItem v-for="item in listToRender" :key="item" :item="item" />
+      <PokeItem v-for="item in listToRender" :key="item" :item="item" @select="selectPokemon" />
     </TransitionGroup>
   </div>
 </template>

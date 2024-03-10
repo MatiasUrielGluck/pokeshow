@@ -1,9 +1,10 @@
 <script setup>
 import { useThemeStore } from '@/stores/theme'
 import { storeToRefs } from 'pinia'
-import { capitalize } from 'vue'
+import { capitalize, ref } from 'vue'
 import { usePokemonsStore } from '@/stores/pokemons'
 import IconFavorite from '@/components/icons/IconFavorite.vue'
+import BaseModal from '@/components/modal/BaseModal.vue'
 
 // Store config
 const themeStore = useThemeStore()
@@ -20,11 +21,11 @@ defineProps({
 </script>
 
 <template>
-  <div class="pokeitem-container">
+  <div class="pokeitem-container" @click="$emit('select', item)">
     <div class="name">
       {{ capitalize(item.name) }}
     </div>
-    <div class="icon" @click="togglePokemonFavoriteStatus(item)">
+    <div class="icon" @click.stop="togglePokemonFavoriteStatus(item)">
       <IconFavorite :is-enabled="isFavoritePokemon(item.name)" />
     </div>
   </div>

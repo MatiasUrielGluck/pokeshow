@@ -4,6 +4,10 @@ export default {
       desktop: '25px 20%',
       mobile: '25px'
     },
+    modal: {
+      desktop: '20%',
+      mobile: '25px'
+    },
     bottomBar: {
       desktop: '0 20%',
       mobile: '25px'
@@ -11,6 +15,7 @@ export default {
   },
 
   background: '#F9F9F9',
+  border: '#E8E8E8',
 
   text: {
     p: '#5E5E5E',
@@ -47,7 +52,8 @@ export default {
   item: {
     background: '#ffffff',
     icon: {
-      background: '#F5F5F5'
+      background: '#' +
+        'F5F5F5'
     }
   }
 }

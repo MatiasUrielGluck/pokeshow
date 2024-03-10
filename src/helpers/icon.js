@@ -4,6 +4,8 @@ import IconListAll from '@/components/icons/IconListAll.vue'
 import IconLoading from '@/components/icons/IconLoading.vue'
 import IconSearch from '@/components/icons/IconSearch.vue'
 import IconFavorite from '@/components/icons/IconFavorite.vue'
+import IconCheck from '@/components/icons/IconCheck.vue'
+import IconShare from '@/components/icons/IconShare.vue'
 
 const iconMap = {
   close: IconClose,
@@ -11,7 +13,9 @@ const iconMap = {
   'fav-plain': IconFavoritesPlain,
   'list-all': IconListAll,
   loading: IconLoading,
-  search: IconSearch
+  search: IconSearch,
+  check: IconCheck,
+  share: IconShare
 }
 
 export const getIconByName = (name) => {
