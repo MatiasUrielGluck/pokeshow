@@ -33,12 +33,18 @@ const emit = defineEmits(['close'])
 const mappedAttrs = ref({})
 const dataToCopy = ref('')
 const isLoading = ref(true)
+const pokeImage = ref(true)
 
 onUpdated(async () => {
   if (!props.open) return
   try {
     isLoading.value = true
     const res = await getPokemonByName(props.pokename)
+
+    pokeImage.value = res.sprites.front_default
+    let image = new Image()
+    image.src = res.sprites.front_default
+
     let mappedData = mapPokemonAttrs(res)
     mappedAttrs.value = mappedData
     dataToCopy.value = formatPokemonData(mappedData)
@@ -59,7 +65,12 @@ onUpdated(async () => {
 
     <div class="content-container" v-else>
       <div class="image-container">
-        <img src="@/assets/images/landscape.png" alt="pokemon landscape" />
+        <div class="landscape">
+          <img src="@/assets/images/landscape.png" alt="pokemon landscape" />
+        </div>
+        <div class="poke-image">
+          <img :src="pokeImage" alt="pokemon image">
+        </div>
       </div>
 
       <ul class="info-container">
@@ -100,15 +111,30 @@ onUpdated(async () => {
   .image-container {
     height: 220px;
 
-    img {
+    .landscape img {
       object-fit: cover;
       width: 100%;
-      height: 100%;
+      height: 220px;
 
       -webkit-border-top-left-radius: 8px;
       -webkit-border-top-right-radius: 8px;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
+    }
+
+    .poke-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 220px;
+      display: grid;
+      place-items: center;
+
+      img {
+        position: absolute;
+        bottom: 0;
+      }
     }
   }
 

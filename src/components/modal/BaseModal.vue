@@ -56,6 +56,7 @@ defineEmits(['close'])
     }
 
     .close-icon {
+      z-index: 1010;
       cursor: pointer;
       position: absolute;
       top: 15px;
