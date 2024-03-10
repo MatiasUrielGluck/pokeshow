@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 
 export const usePokemonsStore = defineStore('pokemons', () => {
   const pokemons = ref([])
-  const favPokemons = ref([])
+  const favPokemons = ref(localStorage.getItem('favpokemons') ? JSON.parse(localStorage.getItem('favpokemons')) : [])
 
   const setPokemons = (data) => {
     pokemons.value = data
@@ -19,6 +19,7 @@ export const usePokemonsStore = defineStore('pokemons', () => {
     } else {
       favPokemons.value = favPokemons.value.filter((poke) => poke.name !== pokemon.name)
     }
+    localStorage.setItem('favpokemons', JSON.stringify(favPokemons.value))
   }
 
   return { pokemons, favPokemons, setPokemons, isFavoritePokemon, togglePokemonFavoriteStatus }
