@@ -75,6 +75,7 @@ defineProps({
     font-size: 16px;
     font-weight: 500;
     color: v-bind('theme.input.text');
+    background: v-bind('theme.searchBar.background');
     padding: v-bind('padding');
     transition: all 0.3s ease;
 

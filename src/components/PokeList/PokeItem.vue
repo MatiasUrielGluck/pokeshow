@@ -51,6 +51,10 @@ defineProps({
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
 
+  .name {
+    color: v-bind('theme.item.text');
+  }
+
   .icon {
     border-radius: 50%;
     width: 40px;
