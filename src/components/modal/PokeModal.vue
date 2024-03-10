@@ -9,7 +9,6 @@ import { mapPokemonAttrs } from '@/helpers/mapPokemonAttrs.js'
 import { formatPokemonData } from '@/helpers/formatPokemonData.js'
 import ShareButton from '@/components/common/ShareButton.vue'
 import IconFavorite from '@/components/icons/IconFavorite.vue'
-import IconLoading from '@/components/icons/IconLoading.vue'
 import LoadingComponent from '@/components/common/LoadingComponent.vue'
 
 const themeStore = useThemeStore()
