@@ -2,7 +2,7 @@ import { capitalize } from 'vue'
 
 const createTypesString = (types) => {
   let typesString = ''
-  types.forEach(type => {
+  types.forEach((type) => {
     typesString += `${capitalize(type.type.name)}, `
   })
   return typesString.slice(0, typesString.length - 2)

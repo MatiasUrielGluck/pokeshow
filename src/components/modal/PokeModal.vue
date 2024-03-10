@@ -51,21 +51,28 @@ onUpdated(async () => {
   <base-modal :open="open" @close="$emit('close')">
     <div class="content-container">
       <div class="image-container">
-        <img src="@/assets/images/landscape.png" alt="pokemon landscape">
+        <img src="@/assets/images/landscape.png" alt="pokemon landscape" />
       </div>
 
       <ul class="info-container">
         <li class="info-item" v-for="key in Object.keys(mappedAttrs)" :key="key">
-          <p><span>{{ key }}:</span> {{ mappedAttrs[key] }}</p>
+          <p>
+            <span>{{ key }}:</span> {{ mappedAttrs[key] }}
+          </p>
         </li>
       </ul>
 
       <div class="actions-container">
         <div class="share-btn">
-          <share-button share-text="Share with friends" clicked-text="Copied!" :data="dataToCopy" width="225px"
-                        mobile-width="225px" />
+          <share-button
+            share-text="Share with friends"
+            clicked-text="Copied!"
+            :data="dataToCopy"
+            width="225px"
+            mobile-width="225px"
+          />
         </div>
-        <div class="fav-icon-modal" @click="togglePokemonFavoriteStatus({name: pokename})">
+        <div class="fav-icon-modal" @click="togglePokemonFavoriteStatus({ name: pokename })">
           <IconFavorite :is-enabled="isFavoritePokemon(pokename)" />
         </div>
       </div>

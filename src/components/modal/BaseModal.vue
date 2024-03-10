@@ -42,7 +42,7 @@ defineEmits(['close'])
 
   display: grid;
   place-items: center;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, 0.6);
 
   .inner-container {
     position: relative;

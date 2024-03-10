@@ -40,6 +40,4 @@ const shareData = () => {
   <g-button :text="textToShow" :icon="iconToShow" @click="shareData" />
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>
