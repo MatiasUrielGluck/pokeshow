@@ -3,13 +3,14 @@ import { useThemeStore } from '@/stores/theme.js'
 import { usePokemonsStore } from '@/stores/pokemons'
 import { storeToRefs } from 'pinia'
 import BaseModal from '@/components/modal/BaseModal.vue'
-import { onMounted, onUpdated, ref } from 'vue'
+import { onUpdated, ref } from 'vue'
 import { getPokemonByName } from '@/services/pokemonsService.js'
 import { mapPokemonAttrs } from '@/helpers/mapPokemonAttrs.js'
 import { formatPokemonData } from '@/helpers/formatPokemonData.js'
-import GButton from '@/components/common/GButton.vue'
 import ShareButton from '@/components/common/ShareButton.vue'
 import IconFavorite from '@/components/icons/IconFavorite.vue'
+import IconLoading from '@/components/icons/IconLoading.vue'
+import LoadingComponent from '@/components/common/LoadingComponent.vue'
 
 const themeStore = useThemeStore()
 const { theme } = storeToRefs(themeStore)
@@ -29,13 +30,14 @@ const props = defineProps({
 
 const emit = defineEmits(['close'])
 
-const pokemon = ref(null)
 const mappedAttrs = ref({})
 const dataToCopy = ref('')
+const isLoading = ref(true)
 
 onUpdated(async () => {
   if (!props.open) return
   try {
+    isLoading.value = true
     const res = await getPokemonByName(props.pokename)
     let mappedData = mapPokemonAttrs(res)
     mappedAttrs.value = mappedData
@@ -43,13 +45,19 @@ onUpdated(async () => {
   } catch (e) {
     console.error(e)
     emit('close')
+  } finally {
+    isLoading.value = false
   }
 })
 </script>
 
 <template>
   <base-modal :open="open" @close="$emit('close')">
-    <div class="content-container">
+    <div class="modal-loading" v-if="isLoading">
+      <LoadingComponent />
+    </div>
+
+    <div class="content-container" v-else>
       <div class="image-container">
         <img src="@/assets/images/landscape.png" alt="pokemon landscape" />
       </div>
@@ -81,6 +89,13 @@ onUpdated(async () => {
 </template>
 
 <style scoped lang="scss">
+.modal-loading {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  width: 100%;
+}
+
 .content-container {
   .image-container {
     height: 220px;

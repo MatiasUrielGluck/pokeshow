@@ -61,6 +61,10 @@ defineEmits(['close'])
       top: 15px;
       right: 15px;
     }
+
+    .custom-content {
+      height: 100%;
+    }
   }
 }
 
