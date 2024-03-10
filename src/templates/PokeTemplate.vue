@@ -6,6 +6,7 @@ import BottomBar from '@/components/common/BottomBar.vue'
 import GInput from '@/components/common/GInput.vue'
 import { computed, ref } from 'vue'
 import PokeList from '@/components/PokeList/PokeList.vue'
+import ThemeSwitch from '@/components/common/ThemeSwitch.vue'
 
 // Store config
 const themeStore = useThemeStore()
@@ -34,6 +35,7 @@ const filteredPokemons = computed(() => {
 </script>
 
 <template>
+  <ThemeSwitch />
   <div class="poke-container">
     <div class="searchbar-container">
       <GInput

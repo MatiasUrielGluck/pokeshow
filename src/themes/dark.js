@@ -1,4 +1,5 @@
 export default {
+  name: 'dark',
   padding: {
     body: {
       desktop: '25px 20%',
