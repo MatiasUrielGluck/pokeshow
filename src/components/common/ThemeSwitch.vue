@@ -19,7 +19,7 @@ const { toggleTheme } = themeStore
 <style scoped lang="scss">
 .theme-switcher {
   cursor: pointer;
-  position: absolute;
+  position: fixed;
   top: 15px;
   right: 15px;
   z-index: 900;
