@@ -54,7 +54,7 @@ export default {
     text: '#FFFFFF',
     background: '#263859',
     icon: {
-      background: '#F5F5F5'
+      background: '#1F4287'
     }
   }
 }

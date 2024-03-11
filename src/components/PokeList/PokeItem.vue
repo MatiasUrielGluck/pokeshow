@@ -57,8 +57,8 @@ defineProps({
 
   .icon {
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     display: grid;
     place-items: center;
     background: v-bind('theme.item.icon.background');
