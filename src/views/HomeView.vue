@@ -3,12 +3,14 @@ import { useThemeStore } from '@/stores/theme'
 import IconWelcome from '@/components/icons/IconWelcome.vue'
 import { storeToRefs } from 'pinia'
 import GButtonVue from '@/components/common/GButton.vue'
+import ThemeSwitch from '@/components/common/ThemeSwitch.vue'
 
 const themeStore = useThemeStore()
 const { theme } = storeToRefs(themeStore)
 </script>
 
 <template>
+  <ThemeSwitch />
   <div class="home-container">
     <IconWelcome />
     <h1>Welcome to Pokédex</h1>
