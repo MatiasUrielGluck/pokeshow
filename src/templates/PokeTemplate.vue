@@ -47,7 +47,7 @@ const filteredPokemons = computed(() => {
       />
     </div>
     <div class="list-container" ref="scrollView">
-      <PokeList :items="filteredPokemons" />
+      <PokeList :items="filteredPokemons" @clear-query="searchQuery = ''" />
     </div>
     <BottomBar :is-favorite="showFavorites" />
   </div>

@@ -2,6 +2,13 @@
 import PokeItem from './PokeItem.vue'
 import { onMounted, onUnmounted, ref, watch } from 'vue'
 import PokeModal from '@/components/modal/PokeModal.vue'
+import GButtonVue from '@/components/common/GButton.vue'
+import router from '@/router/index.js'
+import { useThemeStore } from '@/stores/theme.js'
+import { storeToRefs } from 'pinia'
+
+const themeStore = useThemeStore()
+const { theme } = storeToRefs(themeStore)
 
 const props = defineProps({
   items: {
@@ -9,6 +16,8 @@ const props = defineProps({
     required: true
   }
 })
+
+const emit = defineEmits(['clear-query'])
 
 const listToRender = ref([])
 const scrollView = ref(null)
@@ -32,6 +41,16 @@ const selectPokemon = (pokemon) => {
   showModal.value = true
 }
 
+const handleEmptyList = () => {
+  if (!props.items.length) {
+    if (router.currentRoute.value.name === 'all') {
+      emit('clear-query')
+      return
+    }
+    router.push('/all')
+  }
+}
+
 watch(
   () => props.items,
   () => {
@@ -52,6 +71,16 @@ onUnmounted(() => {
 
 <template>
   <poke-modal :open="showModal" :pokename="selectedPokemonName" @close="showModal = false" />
+  <div class="empty-list" v-if="!items.length">
+    <h1>Uh-oh!</h1>
+    <p>You look lost on your journey!</p>
+    <GButtonVue
+      text="Go back home"
+      type="primary"
+      padding="12px 16px"
+      @click="handleEmptyList"
+    />
+  </div>
   <div ref="scrollView">
     <TransitionGroup name="list" tag="div" class="pokelist-container">
       <PokeItem v-for="item in listToRender" :key="item" :item="item" @select="selectPokemon" />
@@ -60,6 +89,26 @@ onUnmounted(() => {
 </template>
 
 <style lang="scss" scoped>
+.empty-list {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 28px;
+    color: v-bind('theme.text.h1');
+  }
+
+  p {
+    margin-bottom: 12px;
+    color: v-bind('theme.text.p');
+  }
+}
+
 .pokelist-container {
   position: relative;
   display: flex;
