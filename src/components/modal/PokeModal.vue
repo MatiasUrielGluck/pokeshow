@@ -133,6 +133,7 @@ onUpdated(async () => {
       img {
         position: absolute;
         bottom: 0;
+        width: 160px;
       }
     }
   }
