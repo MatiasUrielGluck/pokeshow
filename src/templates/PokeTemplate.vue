@@ -77,6 +77,7 @@ const filteredPokemons = computed(() => {
     background: v-bind('theme.background');
     padding: v-bind('theme.padding.bottomBar.desktop');
     padding-top: 25px;
+    transition: background-color 0.3s ease;
 
     @media (width < 1000px) {
       padding: v-bind('theme.padding.bottomBar.mobile');

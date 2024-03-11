@@ -57,6 +57,7 @@ defineProps({
   box-shadow: 0 -5px 4px #0000000d;
 
   padding: v-bind('theme.padding.bottomBar.desktop');
+  transition: background-color 0.3s ease;
 
   @media (width < 1000px) {
     padding: v-bind('theme.padding.bottomBar.mobile');
