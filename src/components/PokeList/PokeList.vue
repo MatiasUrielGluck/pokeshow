@@ -6,9 +6,12 @@ import GButtonVue from '@/components/common/GButton.vue'
 import router from '@/router/index.js'
 import { useThemeStore } from '@/stores/theme.js'
 import { storeToRefs } from 'pinia'
+import { usePokemonsStore } from '@/stores/pokemons.js'
 
 const themeStore = useThemeStore()
 const { theme } = storeToRefs(themeStore)
+const pokemonsStore = usePokemonsStore()
+const { pokemons } = storeToRefs(pokemonsStore)
 
 const props = defineProps({
   items: {
@@ -51,6 +54,12 @@ const handleEmptyList = () => {
   }
 }
 
+const handleQuery = (query) => {
+  if (!query || !query.name) return
+  if (!pokemons.value.find(pokemon => pokemon.name === query.name)) return
+  selectPokemon({ name: query.name })
+}
+
 watch(
   () => props.items,
   () => {
@@ -62,6 +71,7 @@ onMounted(() => {
   // window.addEventListener()
   loadMoreItems(true)
   window.addEventListener('scroll', handleScroll)
+  handleQuery(router.currentRoute.value.query)
 })
 
 onUnmounted(() => {
